@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifePool : MonoBehaviour
+public class KnifePool
 {
-    // Start is called before the first frame update
-    void Start()
+    private Knife[,] _knifes;
+    private readonly KnifeSpawner _knifeSpawner;
+
+    public KnifePool(LevelData levelData, KnifeSpawner knifeSpawner)
     {
-        
+        _knifeSpawner = knifeSpawner;
+        InitKnifes(levelData);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InitKnifes(LevelData levelData)
     {
-        
+        _knifes = new Knife[levelData.stageDatas.Length,
+            levelData.stageDatas[0].knifesNumber];
+
+        for (int i = 0; i < levelData.stageDatas.Length; i++)
+            for (int j = 0; j < levelData.stageDatas[0].knifesNumber; i++)
+                _knifes[i, j] =  _knifeSpawner.Spawn();
     }
 }
