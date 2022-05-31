@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public sealed class Knife : MonoBehaviour, IInteractable, IObserver
+public sealed class Knife : MonoBehaviour, IObserver
 {
     [SerializeField] private Rigidbody _rb;
     private bool _isUsable = true;

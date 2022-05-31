@@ -11,6 +11,6 @@ public sealed class KnifeKeeper
 
     public void ThrowKnife()
     {
-
+        _knifeThrower.ThrowKnife(_knifePool.PrepareKnife());
     }
 }

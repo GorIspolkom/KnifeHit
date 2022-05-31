@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class UIPool : MonoBehaviour
+public struct UICounters
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public KnifesThrowCounter knifesThrowCounter;
+    public RewardedItemCounter rewardedItemCounter;
 
-    // Update is called once per frame
-    void Update()
+    public UICounters(KnifesThrowCounter knifesThrowCounter, RewardedItemCounter rewardedItemCounter)
     {
-        
+        this.knifesThrowCounter = knifesThrowCounter;
+        this.rewardedItemCounter = rewardedItemCounter;
+    }
+}
+
+public sealed class UIPool
+{
+    public readonly UICounters uICounters;
+
+    public UIPool(UICounters uICounters)
+    {
+        this.uICounters = uICounters;
     }
 }

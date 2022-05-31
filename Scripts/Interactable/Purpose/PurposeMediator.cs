@@ -15,6 +15,7 @@ public sealed class PurposeMediator
 
     public void Notify(Purpose purpose)
     {
+        //_uIPool.uICounters.knifesThrowCounter.UpdateText();
 
     }
 }
